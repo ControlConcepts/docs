@@ -1,0 +1,1036 @@
+$ EZ-EDS Version 3.29.1.20210209 Generated Electronic Data Sheet
+
+[File]
+        DescText = "Control Concepts ATOM SCR";
+        CreateDate = 09-15-2022;
+        CreateTime = 15:41:13;
+        ModDate = 09-30-2022;
+        ModTime = 15:54:37;
+        Revision = 1.0;
+        HomeURL = "https://ccipower.com/";
+        1_IOC_Details_License = 0x82F50243;
+
+[Device]
+        VendCode = 1188;
+        VendName = "Control Concepts, Inc.";
+        ProdType = 43;
+        ProdTypeStr = "Generic Device";
+        ProdCode = 4688;
+        MajRev = 1;
+        MinRev = 1;
+        ProdName = "Atom";
+        Catalog = "CCI";
+
+[Device Classification]
+        Class1 = EtherNetIP;
+
+[Params]
+    $ This is the setpoint that is always used. This value will be set to zero (0) at power-up during initialization
+        Param1 =                        $ Test5
+                $ Test1
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0000,                 $ Descriptor
+                0xC4,                   $ Data Type
+                4,                      $ Data Size in bytes
+                $ Test5
+                "Digital setpoint",     $ name
+                $ Test6
+                "",                     $ units
+                $ Test7
+                "SP 23",                $ help string
+                0,10000,0,              $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+    $ Selections:
+    $ 0	=	STOP
+    $ 1	=	RUN
+
+    $ This is used to put the controller into RUN and STOP state.
+    $ The value of this parameter will be set to STOP (0) at power-up during initialization.
+        Param2 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0000,                 $ Descriptor
+                0xC1,                   $ Data Type
+                1,                      $ Data Size in bytes
+                "Digital RUN Enable",   $ name
+                "",                     $ units
+                "SP 24",                $ help string
+                0,1,0,                  $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+        Param3 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xD1,                   $ Data Type
+                1,                      $ Data Size in bytes
+                "Inhibit Alarm Status", $ name
+                "",                     $ units
+                "MP 204",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+    $ Units:	N/A, Binary Coded
+    $ Format: XXXXXXXX
+    $ BIT		Description
+    $ 7	=	reserved
+    $ 6	=	reserved
+    $ 5	=	reserved
+    $ 4	=	Shorted SCR
+    $ 3	=	Open Load
+    $ 2	=	Partial Load Fault
+    $ 1	=	Current Limit
+    $ 0	=	Voltage Limit
+
+    $ Indication of conditions that cause specific warning alarms
+        Param4 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xD1,                   $ Data Type
+                1,                      $ Data Size in bytes
+                "Warning Alarm Status", $ name
+                "",                     $ units
+                "MP 217",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+    $ Format: X
+    $ Representation:
+    $ 0	=	OK
+    $ 1	=	Timeout = Loss of feedback
+
+    $ Status of feedback acquisition
+        Param5 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xD1,                   $ Data Type
+                1,                      $ Data Size in bytes
+                "Feedback Read Status", $ name
+                "",                     $ units
+                "MP 334",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+        Param6 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xCA,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "AC Line Frequency",    $ name
+                "Hz",                   $ units
+                "MP 206",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                1;                      $ decimal places
+        Param7 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xCA,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "AC Line Voltage",      $ name
+                "Volts",                $ units
+                "MP 207",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                1;                      $ decimal places
+        Param8 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xCA,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "Load Voltage",         $ name
+                "Volts",                $ units
+                "MP 208",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                1;                      $ decimal places
+        Param9 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xCA,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "Load Current",         $ name
+                "Amps",                 $ units
+                "MP 209",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                1;                      $ decimal places
+        Param10 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xCA,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "Load Resistance",      $ name
+                "Ohms",                 $ units
+                "MP 210",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                1;                      $ decimal places
+        Param11 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xCA,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "Heatsink Temperature", $ name
+                "C",                    $ units
+                "MP 211",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                1;                      $ decimal places
+    $ Format: XXX.X
+
+    $ Indicates the amount, in percent, that the output of the controller is ON.
+        Param12 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xCA,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "Output Duty Cycle %",  $ name
+                "% of Full ON",         $ units
+                "MP 213",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                1;                      $ decimal places
+    $ Format: XXX.X
+
+    $ The command reference input to the control compensation loop in units determined by the "Feedback Type" (SP-1) selection
+        Param13 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xCA,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "Setpoint Reference",   $ name
+                "Volts, Amps",          $ units
+                "MP 214",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                1;                      $ decimal places
+    $ Format: XXX.X
+
+    $ The control output supplied to the load in units determined by the "Feedback Type" (SP-1) selection
+        Param14 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xCA,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "Feedback",             $ name
+                "Volts, Amps",          $ units
+                "MP 215",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                1;                      $ decimal places
+    $ Expected nominal resistance of the load used for comparison for partial load fault detection
+        Param15 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xCA,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "Partial Load Fault Target Resistance",    $ name
+                "Ohms",                 $ units
+                "MP 218",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                2;                      $ decimal places
+    $ The load resistance used for comparison with the "Partial Load Fault Target Resistance" (MP-218) in detection of a partial load fault
+        Param16 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xCA,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "Partial Load Fault Resistance",    $ name
+                "Ohms",                 $ units
+                "MP 219",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                2;                      $ decimal places
+    $ Units:	N/A, Binary Coded
+    $ Format: XXXXXXXX
+    $ BIT		Description
+    $ 7	=	reserved
+    $ 6	=	reserved
+    $ 5	=	reserved
+    $ 4	=	Open Load
+    $ 3	=	reserved
+    $ 2	=	reserved
+    $ 1	=	reserved
+    $ 0	=	Shorted SCR
+        Param17 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xCA,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "Partial Load Fault Resistance Deviation",    $ name
+                "%",                    $ units
+                "MP 220",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                2;                      $ decimal places
+    $ The firmware identification number
+        Param18 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xC4,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "Firmware ID",          $ name
+                "",                     $ units
+                "MP 331",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+        Param19 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xC4,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "Firmware Revision",    $ name
+                "",                     $ units
+                "MP 332",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+        Param20 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xC4,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "Minor Revision",       $ name
+                "",                     $ units
+                "MP 333",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+    $ Set to the expected output voltage when the controller output is fully ON 100%. This equates to the voltage output command when feedback type is set to Voltage feedforward and the setpoint is at 100% (maximum)
+        Param21 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xC4,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "Full Scale Voltage",   $ name
+                "",                     $ units
+                "SP 5",                 $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+    $ Minimum:	2.0
+    $ Maximum:	100.0
+    $ Default:	80.0
+
+    $ Set to the expected output current when the controller output is fully ON 100%. This equates to the current output command when feedback type is set to Load Current and the setpoint is at 100% (maximum)
+        Param22 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xCA,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "Full Scale Current",   $ name
+                "RMS Current",          $ units
+                "SP 6",                 $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+    $ Units:	N/A, Binary Coded
+    $ Format: XXXXXXXX
+    $ BIT		Description
+    $ 7	=	reserved
+    $ 6	=	reserved
+    $ 5	=	Sync-Locked (Sync'd to AC Line)
+    $ 4	=	Pre-Lock 2
+    $ 3	=	Pre-Lock 1
+    $ 2	=	reserved
+    $ 1	=	AC Line B OK
+    $ 0	=	AC Line A OK
+
+    $ "BIT 5 = 1" is required before the controller can provide power to the load
+        Param23 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xD1,                   $ Data Type
+                1,                      $ Data Size in bytes
+                "AC Line Status",       $ name
+                "Ohms",                 $ units
+                "MP 337",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+    $ Units:	N/A, Binary Coded
+    $ Format: XXXXXXXX
+    $ BIT		Description
+    $ 7	=	reserved
+    $ 6	=	reserved
+    $ 5	=	reserved
+    $ 4	=	Open Load
+    $ 3	=	reserved
+    $ 2	=	reserved
+    $ 1	=	reserved
+    $ 0	=	Shorted SCR
+        Param24 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xD1,                   $ Data Type
+                1,                      $ Data Size in bytes
+                "Load Status",          $ name
+                "%",                    $ units
+                "MP 338",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+    $ Format: X
+    $ Representation:
+    $ 0	=	Disabled
+    $ 1	=	Initialization
+    $ 2	=	Normal, operating
+    $ 3	=	Calibration
+    $ 4	=	Diagnostic
+
+    $ Indicates the operational status of the controller.
+        Param25 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xD1,                   $ Data Type
+                1,                      $ Data Size in bytes
+                "Controller Status",    $ name
+                "",                     $ units
+                "MP 205",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+    $ Format: X
+    $ Representation:
+    $ 0	=	STOP
+    $ 1	=	RUN
+    $ 2	=	FAULT
+    $ 3	=	FAULT RESET
+        Param26 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xD1,                   $ Data Type
+                1,                      $ Data Size in bytes
+                "Controller State",     $ name
+                "",                     $ units
+                "MP 212",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+    $ Units:	N/A, Binary Coded
+    $ Format: XXXXXXXXXXXXXXXX
+    $ BIT		Description
+    $ 15	=	reserved
+    $ 14	=	reserved
+    $ 13	=	reserved
+    $ 12	=	Calibration Table has changed, store to EEPROM
+    $ 11	=	MFG CP Table has changed, store to EEPROM
+    $ 10	=	SP Table has changed, store to EEPROM
+    $ 9	=	Backup EEPROM page needs updating
+    $ 8	=	Main EEPROM page needs updating
+    $ 7	=	reserved
+    $ 6	=	Backup Calibration Table Error
+    $ 5	=	Backup MFG CP Table Error
+    $ 4	=	Backup SP Table Error
+    $ 3	=	Calibration Table Error
+    $ 2	=	MFG CP Table Error
+    $ 1	=	SP Table Error
+    $ 0	=	EEPROM Initialization
+
+    $ Status of the non-volatile parameter EEPROM storage
+    $ BITs 1 thru 6 indicate EE Table error status conditions
+    $ BITs 10 thru 12 indicate a change to the specific table in RAM. Modbus Command 25 must be sent to the controller in order to retain the modified values through a power-cycle or processor reset.
+        Param27 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xD2,                   $ Data Type
+                2,                      $ Data Size in bytes
+                "EEPROM Status",        $ name
+                "",                     $ units
+                "MP 336",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+    $ Format: XXXXXXXXXXXXXXXX
+    $ BIT		Description
+    $ 15	=	reserved
+    $ 14	=	reserved
+    $ 13	=	reserved
+    $ 12	=	Calibration Table has changed, store to EEPROM
+    $ 11	=	MFG CP Table has changed, store to EEPROM
+    $ 10	=	SP Table has changed, store to EEPROM
+    $ 9	=	Backup EEPROM page needs updating
+    $ 8	=	Main EEPROM page needs updating
+    $ 7	=	reserved
+    $ 6	=	Backup Calibration Table Error
+    $ 5	=	Backup MFG CP Table Error
+    $ 4	=	Backup SP Table Error
+    $ 3	=	Calibration Table Error
+    $ 2	=	MFG CP Table Error
+    $ 1	=	SP Table Error
+    $ 0	=	EEPROM Initialization
+
+    $ Status of the non-volatile parameter EEPROM storage
+    $ BITs 1 thru 6 indicate EE Table error status conditions
+    $ BITs 10 thru 12 indicate a change to the specific table in RAM. Modbus Command 25 must be sent to the controller in order to retain the modified values through a power-cycle or processor reset.
+        Param28 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xD2,                   $ Data Type
+                2,                      $ Data Size in bytes
+                "EEPROM Status 2",      $ name
+                "",                     $ units
+                "MP 336",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+    $ Units:	N/A, Binary Coded
+    $ Format: XXXXXXXX
+    $ BIT		Description
+    $ 7	=	reserved
+    $ 6	=	reserved
+    $ 5	=	reserved
+    $ 4	=	Feedback loss
+    $ 3	=	SCR timing loss
+    $ 2	=	Line Frequency failure
+    $ 1	=	Phase loss or missing cycle
+    $ 0	=	Line Lock loss
+
+    $ "Error Latch" is provided as a diagnostic troubleshooting aid. When one of the specific events indicated in Error Latch occurs, the indication bit for the event is set. The Error Latch bits can only be cleared by a power-cycle, processor reset, or by sending Modbus command 26 to the controller.
+        Param29 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xD1,                   $ Data Type
+                1,                      $ Data Size in bytes
+                "Error Latch",          $ name
+                "RMS Voltage",          $ units
+                "MP 339",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+    $ Units:	N/A, Binary Coded
+    $ Format: XXXXXXXX
+    $ BIT		Description
+    $ 7	=	reserved
+    $ 6	=	Initialization in progress (0 = finished = Ready)
+    $ 5	=	reserved
+    $ 4	=	reserved
+    $ 3	=	Waiting for ENTER key during initialization
+    $ 2	=	reserved
+    $ 1	=	reserved
+    $ 0	=	MFG Unlock, Access code successfully entered
+        Param30 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0030,                 $ Descriptor
+                0xD1,                   $ Data Type
+                1,                      $ Data Size in bytes
+                "Miscellaneous Status", $ name
+                "",                     $ units
+                "MP 335",               $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+
+[Assembly]
+        Revision = 3;
+        Object_Name = "Assembly Object";
+        Object_Class_Code = 0x04;
+        Class_Attributes =
+                0x01,
+                0x02,
+                0x03,
+                0x04,
+                0x06,
+                0x07;
+        Instance_Attributes =
+                0x01,
+                0x02,
+                0x03,
+                0x04;
+        Class_Services = 0x0E;
+        Instance_Services =
+                0x0E,
+                0x10,
+                0x18,
+                0x19;
+        Assem1 =
+                "Consuming format (input to device)",
+                ,
+                ,
+                0x0000,
+                ,,
+                32,Param1,
+                8,Param2;
+        Assem2 =
+                "Producing format (output from device)",
+                ,
+                ,
+                0x0000,
+                ,,
+                $ Test1
+                32,Param1,              $ Test2
+                8,Param2,
+                8,Param3,
+                8,Param4,
+                8,Param5,
+                32,Param6,
+                32,Param7,
+                32,Param8,
+                32,Param9,
+                32,Param10,
+                32,Param11,
+                32,Param12,
+                32,Param13,
+                32,Param14,
+                32,Param15,
+                32,Param16,
+                32,Param17,
+                32,Param18,
+                32,Param19,
+                32,Param20,
+                32,Param21,
+                32,Param22,
+                8,Param23,
+                8,Param24,
+                8,Param25,
+                8,Param26,
+                16,Param27,
+                16,Param28,
+                8,Param29,
+                8,Param30;
+
+[Connection Manager]
+        Revision = 1;
+        Object_Name = "Connection Manager Object";
+        Object_Class_Code = 0x06;
+        MaxInst = 1;
+        Number_Of_Static_Instances = 1;
+        Max_Number_Of_Dynamic_Instances = 0;
+        Class_Attributes =
+                0x01,
+                0x02,
+                0x03,
+                0x04,
+                0x06,
+                0x07;
+        Instance_Attributes =
+                0x01,
+                0x02,
+                0x03,
+                0x04,
+                0x05,
+                0x06,
+                0x07,
+                0x08;
+        Class_Services =
+                0x01,
+                0x0E;
+        Instance_Services =
+                0x01,
+                0x02,
+                0x0E,
+                0x10,
+                0x54,
+                0x5B,
+                0x4E,
+                0x52;
+        Connection1 =
+                0x04030002,             $ 0-15    = supported transport classes
+                                        $ 16      = trigger: cyclic
+                                        $ 17      = trigger: change of state
+                                        $ 18      = trigger: application
+                                        $ 19-23   = trigger: reserved
+                                        $ 24      = application type: listen-only
+                                        $ 25      = application type: input-only
+                                        $ 26      = application type: exclusive-owner
+                                        $ 27      = application type: redundant-owner
+                                        $ 28-30   = reserved
+                                        $ 31      = Direction: Client = 0 / Server = 1
+                0x44640405,             $ 0       = O->T fixed size supported
+                                        $ 1       = O->T variable size supported
+                                        $ 2       = T->O fixed size supported
+                                        $ 3       = T->O variable size supported
+                                        $ 4-5     = O->T number of bytes per slot (obsolete)
+                                        $ 6-7     = T->O number of bytes per slot (obsolete)
+                                        $ 8-10    = O->T Real time transfer format
+                                        $ 11      = reserved
+                                        $ 12-14   = T->O Real time transfer format
+                                        $ 15      = reserved
+                                        $ 16      = O->T connection type: NULL
+                                        $ 17      = O->T connection type: MULTICAST
+                                        $ 18      = O->T connection type: POINT2POINT
+                                        $ 19      = O->T connection type: reserved
+                                        $ 20      = T->O connection type: NULL
+                                        $ 21      = T->O connection type: MULTICAST
+                                        $ 22      = T->O connection type: POINT2POINT
+                                        $ 23      = T->O connection type: reserved
+                                        $ 24      = O->T priority: LOW
+                                        $ 25      = O->T priority: HIGH
+                                        $ 26      = O->T priority: SCHEDULED
+                                        $ 27      = O->T priority: reserved
+                                        $ 28      = T->O priority: LOW
+                                        $ 29      = T->O priority: HIGH
+                                        $ 30      = T->O priority: SCHEDULED
+                                        $ 31      = T->O priority: reserved
+                ,,Assem1,               $ O->T RPI, size, format
+                ,,Assem2,               $ T->O RPI, size, format
+                ,,                      $ proxy config size, format
+                ,,                      $ target config size, format
+                "Consume Data From/Produce Data To",    $ Connection Name
+                "",                     $ help string
+                "20 04 24 03 2C 65 2C 66";    $ Path
+        Connection2 =
+                0x02030002,             $ 0-15    = supported transport classes
+                                        $ 16      = trigger: cyclic
+                                        $ 17      = trigger: change of state
+                                        $ 18      = trigger: application
+                                        $ 19-23   = trigger: reserved
+                                        $ 24      = application type: listen-only
+                                        $ 25      = application type: input-only
+                                        $ 26      = application type: exclusive-owner
+                                        $ 27      = application type: redundant-owner
+                                        $ 28-30   = reserved
+                                        $ 31      = Direction: Client = 0 / Server = 1
+                0x04640305,             $ 0       = O->T fixed size supported
+                                        $ 1       = O->T variable size supported
+                                        $ 2       = T->O fixed size supported
+                                        $ 3       = T->O variable size supported
+                                        $ 4-5     = O->T number of bytes per slot (obsolete)
+                                        $ 6-7     = T->O number of bytes per slot (obsolete)
+                                        $ 8-10    = O->T Real time transfer format
+                                        $ 11      = reserved
+                                        $ 12-14   = T->O Real time transfer format
+                                        $ 15      = reserved
+                                        $ 16      = O->T connection type: NULL
+                                        $ 17      = O->T connection type: MULTICAST
+                                        $ 18      = O->T connection type: POINT2POINT
+                                        $ 19      = O->T connection type: reserved
+                                        $ 20      = T->O connection type: NULL
+                                        $ 21      = T->O connection type: MULTICAST
+                                        $ 22      = T->O connection type: POINT2POINT
+                                        $ 23      = T->O connection type: reserved
+                                        $ 24      = O->T priority: LOW
+                                        $ 25      = O->T priority: HIGH
+                                        $ 26      = O->T priority: SCHEDULED
+                                        $ 27      = O->T priority: reserved
+                                        $ 28      = T->O priority: LOW
+                                        $ 29      = T->O priority: HIGH
+                                        $ 30      = T->O priority: SCHEDULED
+                                        $ 31      = T->O priority: reserved
+                ,0,,                    $ O->T RPI, size, format
+                ,,Assem2,               $ T->O RPI, size, format
+                ,,                      $ proxy config size, format
+                ,,                      $ target config size, format
+                "Consume Data From",    $ Connection Name
+                "",                     $ help string
+                "20 04 24 01 2C C6 2C 65";    $ Path
+        Connection3 =
+                0x04030002,             $ 0-15    = supported transport classes
+                                        $ 16      = trigger: cyclic
+                                        $ 17      = trigger: change of state
+                                        $ 18      = trigger: application
+                                        $ 19-23   = trigger: reserved
+                                        $ 24      = application type: listen-only
+                                        $ 25      = application type: input-only
+                                        $ 26      = application type: exclusive-owner
+                                        $ 27      = application type: redundant-owner
+                                        $ 28-30   = reserved
+                                        $ 31      = Direction: Client = 0 / Server = 1
+                0x00463405,             $ 0       = O->T fixed size supported
+                                        $ 1       = O->T variable size supported
+                                        $ 2       = T->O fixed size supported
+                                        $ 3       = T->O variable size supported
+                                        $ 4-5     = O->T number of bytes per slot (obsolete)
+                                        $ 6-7     = T->O number of bytes per slot (obsolete)
+                                        $ 8-10    = O->T Real time transfer format
+                                        $ 11      = reserved
+                                        $ 12-14   = T->O Real time transfer format
+                                        $ 15      = reserved
+                                        $ 16      = O->T connection type: NULL
+                                        $ 17      = O->T connection type: MULTICAST
+                                        $ 18      = O->T connection type: POINT2POINT
+                                        $ 19      = O->T connection type: reserved
+                                        $ 20      = T->O connection type: NULL
+                                        $ 21      = T->O connection type: MULTICAST
+                                        $ 22      = T->O connection type: POINT2POINT
+                                        $ 23      = T->O connection type: reserved
+                                        $ 24      = O->T priority: LOW
+                                        $ 25      = O->T priority: HIGH
+                                        $ 26      = O->T priority: SCHEDULED
+                                        $ 27      = O->T priority: reserved
+                                        $ 28      = T->O priority: LOW
+                                        $ 29      = T->O priority: HIGH
+                                        $ 30      = T->O priority: SCHEDULED
+                                        $ 31      = T->O priority: reserved
+                ,,Assem1,               $ O->T RPI, size, format
+                ,0,,                    $ T->O RPI, size, format
+                ,,                      $ proxy config size, format
+                ,,                      $ target config size, format
+                "Produce Data To",      $ Connection Name
+                "",                     $ help string
+                "20 04 24 01 2C 66 2C C6";    $ Path
+        Connection4 =
+                0x01030002,             $ 0-15    = supported transport classes
+                                        $ 16      = trigger: cyclic
+                                        $ 17      = trigger: change of state
+                                        $ 18      = trigger: application
+                                        $ 19-23   = trigger: reserved
+                                        $ 24      = application type: listen-only
+                                        $ 25      = application type: input-only
+                                        $ 26      = application type: exclusive-owner
+                                        $ 27      = application type: redundant-owner
+                                        $ 28-30   = reserved
+                                        $ 31      = Direction: Client = 0 / Server = 1
+                0x04640305,             $ 0       = O->T fixed size supported
+                                        $ 1       = O->T variable size supported
+                                        $ 2       = T->O fixed size supported
+                                        $ 3       = T->O variable size supported
+                                        $ 4-5     = O->T number of bytes per slot (obsolete)
+                                        $ 6-7     = T->O number of bytes per slot (obsolete)
+                                        $ 8-10    = O->T Real time transfer format
+                                        $ 11      = reserved
+                                        $ 12-14   = T->O Real time transfer format
+                                        $ 15      = reserved
+                                        $ 16      = O->T connection type: NULL
+                                        $ 17      = O->T connection type: MULTICAST
+                                        $ 18      = O->T connection type: POINT2POINT
+                                        $ 19      = O->T connection type: reserved
+                                        $ 20      = T->O connection type: NULL
+                                        $ 21      = T->O connection type: MULTICAST
+                                        $ 22      = T->O connection type: POINT2POINT
+                                        $ 23      = T->O connection type: reserved
+                                        $ 24      = O->T priority: LOW
+                                        $ 25      = O->T priority: HIGH
+                                        $ 26      = O->T priority: SCHEDULED
+                                        $ 27      = O->T priority: reserved
+                                        $ 28      = T->O priority: LOW
+                                        $ 29      = T->O priority: HIGH
+                                        $ 30      = T->O priority: SCHEDULED
+                                        $ 31      = T->O priority: reserved
+                ,0,,                    $ O->T RPI, size, format
+                ,,Assem2,               $ T->O RPI, size, format
+                ,,                      $ proxy config size, format
+                ,,                      $ target config size, format
+                "Consume Data From (Listen Only)",    $ Connection Name
+                "",                     $ help string
+                "20 04 24 01 2C C7 2C 65";    $ Path
+
+[Port]
+        Revision = 2;
+        Object_Name = "Port Object";
+        Object_Class_Code = 0xF4;
+        MaxInst = 3;
+        Number_Of_Static_Instances = 2;
+        Max_Number_Of_Dynamic_Instances = 0;
+        Class_Attributes =
+                0x01,
+                0x02,
+                0x03,
+                0x06,
+                0x07,
+                0x08,
+                0x09;
+        Instance_Attributes =
+                0x01,
+                0x02,
+                0x03,
+                0x04,
+                0x07,
+                0x0A,
+                0x0B;
+        Class_Services =
+                0x0E,
+                0x01;
+        Instance_Services =
+                0x0E,
+                0x01;
+        Port1 =
+                TCP,
+                "Ethernet Port",
+                "20 F5 24 01",
+                1,
+                0x00,
+                ;
+
+[Capacity]
+        MaxCIPConnections = 10;
+        TSpec1 = TxRx, 504, 20000;
+
+[TCP/IP Interface Class]
+        Revision = 4;
+        Object_Name = "TCP/IP Interface Object";
+        Object_Class_Code = 0xF5;
+        MaxInst = 1;
+        Number_Of_Static_Instances = 1;
+        Max_Number_Of_Dynamic_Instances = 0;
+        Class_Attributes =
+                0x01,
+                0x02,
+                0x03,
+                0x04,
+                0x06,
+                0x07;
+        Instance_Attributes =
+                0x01,
+                0x02,
+                0x03,
+                0x04,
+                0x05,
+                0x06,
+                0x08,
+                0x09,
+                0x0D,
+                0x10,
+                0x11;
+        Class_Services =
+                0x01,
+                0x0E;
+        Instance_Services =
+                0x01,
+                0x0E,
+                0x10;
+
+[Ethernet Link Class]
+        Revision = 4;
+        Object_Name = "Ethernet Link Object";
+        Object_Class_Code = 0xF6;
+        MaxInst = 3;
+        Number_Of_Static_Instances = 3;
+        Max_Number_Of_Dynamic_Instances = 0;
+        Class_Attributes =
+                0x01,
+                0x02,
+                0x03,
+                0x04,
+                0x06,
+                0x07;
+        Instance_Attributes =
+                0x01,
+                0x02,
+                0x03,
+                0x07,
+                0x08,
+                0x0A,
+                0x0B;
+        Class_Services =
+                0x01,
+                0x0E;
+        Instance_Services =
+                0x01,
+                0x0E,
+                0x10;
+        InterfaceLabel1 = "Port #1";
+        InterfaceLabel2 = "Port #2";
+
+[Identity Class]
+        Revision = 2;
+        Object_Name = "Identity Object";
+        Object_Class_Code = 0x01;
+        MaxInst = 1;
+        Number_Of_Static_Instances = 1;
+        Max_Number_Of_Dynamic_Instances = 0;
+        Class_Attributes =
+                0x01,
+                0x02,
+                0x03,
+                0x04,
+                0x06,
+                0x07;
+        Instance_Attributes =
+                0x01,
+                0x02,
+                0x03,
+                0x04,
+                0x05,
+                0x06,
+                0x07,
+                0xF3,
+                0xF5,
+                0xF6;
+        Class_Services =
+                0x01,
+                0x0E;
+        Instance_Services =
+                0x01,
+                0x0E;
+
+[Message Router Class]
+        Revision = 1;
+        Object_Name = "Message Router Object";
+        Object_Class_Code = 0x02;
+        MaxInst = 1;
+        Number_Of_Static_Instances = 1;
+        Max_Number_Of_Dynamic_Instances = 0;
+        Class_Attributes =
+                0x01,
+                0x02,
+                0x03,
+                0x04,
+                0x05,
+                0x06,
+                0x07,
+                0xC8,
+                0xC9;
+        Instance_Attributes =
+                0x01,
+                0x02,
+                0x03;
+        Class_Services =
+                0x01,
+                0x0E;
+        Instance_Services =
+                0x01,
+                0x0E;
+
