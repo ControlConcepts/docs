@@ -10,4 +10,4 @@ Welcome to the production documentation website for Control Concepts. Here you'l
 - [Contact Sales](https://ccipower.com/how-contact-us) for product inquiries.
 - View our [Product Manuals](https://ccipower.com/customer-support/manuals-and-cad-blocks)
 
-Suggest feedback or report issues with our documentation on our [GitHub repository](https://github.com/ccipower/docs).
+Suggest feedback or report issues with our documentation on our [GitHub repository](https://github.com/controlconcepts/docs).
