@@ -13,17 +13,17 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://docs.github.cci.local',
+  url: 'https://github.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/Internal-Tools/docs',
+  baseUrl: '/ControlConcepts/docs',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Internal-Tools', // Usually your GitHub org/user name.
+  organizationName: 'ControlConcepts', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
   deploymentBranch: 'gh-pages',
-  githubHost: 'github.cci.local',
+  githubHost: 'github.com',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
